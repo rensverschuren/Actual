@@ -1,12 +1,13 @@
 //
 //  Document.h
-//  Actual
+//  playout
 //
-//  Created by Rens Verschuren on 06-02-12.
+//  Created by Rens Verschuren on 17-01-12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
+#import "DocumentWindowController.h"
 
 @interface Document : NSPersistentDocument
 

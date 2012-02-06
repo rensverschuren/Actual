@@ -1,12 +1,14 @@
 //
 //  Document.m
-//  Actual
+//  playout
 //
-//  Created by Rens Verschuren on 06-02-12.
+//  Created by Rens Verschuren on 17-01-12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "Document.h"
+
+@class DocumentWindowController;
 
 @implementation Document
 
@@ -20,13 +22,6 @@
     return self;
 }
 
-- (NSString *)windowNibName
-{
-    // Override returning the nib file name of the document
-    // If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this method and override -makeWindowControllers instead.
-    return @"Document";
-}
-
 - (void)windowControllerDidLoadNib:(NSWindowController *)aController
 {
     [super windowControllerDidLoadNib:aController];
@@ -36,6 +31,11 @@
 + (BOOL)autosavesInPlace
 {
     return YES;
+}
+
+- (void)makeWindowControllers {
+    DocumentWindowController *windowController = [[DocumentWindowController alloc] initWithWindowNibName:@"Document"];    
+    [self addWindowController:windowController]; 
 }
 
 @end
