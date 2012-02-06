@@ -132,32 +132,10 @@
 		ACA84D2D14DFD6E1005EA159 /* Actual */ = {
 			isa = PBXGroup;
 			children = (
-				ACA84D7B14DFD831005EA159 /* MainMenu.xib */,
-				ACA84D4A14DFD771005EA159 /* Content.xib */,
-				ACA84D4B14DFD771005EA159 /* ContentViewController.h */,
-				ACA84D4C14DFD771005EA159 /* ContentViewController.m */,
-				ACA84D4D14DFD771005EA159 /* Document.h */,
-				ACA84D4E14DFD771005EA159 /* Document.m */,
-				ACA84D4F14DFD771005EA159 /* Document.xib */,
-				ACA84D5014DFD771005EA159 /* DocumentWindowController.h */,
-				ACA84D5114DFD771005EA159 /* DocumentWindowController.m */,
-				ACA84D5214DFD771005EA159 /* Items.xib */,
-				ACA84D5314DFD771005EA159 /* ItemsViewController.h */,
-				ACA84D5414DFD771005EA159 /* ItemsViewController.m */,
-				ACA84D5514DFD771005EA159 /* Player.xib */,
-				ACA84D5614DFD771005EA159 /* PlayerView.h */,
-				ACA84D5714DFD771005EA159 /* PlayerView.m */,
-				ACA84D5814DFD771005EA159 /* PlayerViewController.h */,
-				ACA84D5914DFD771005EA159 /* PlayerViewController.m */,
-				ACA84D5A14DFD771005EA159 /* Preferences.xib */,
-				ACA84D5B14DFD771005EA159 /* PreferencesWindowController.h */,
-				ACA84D5C14DFD771005EA159 /* PreferencesWindowController.m */,
-				ACA84D5D14DFD771005EA159 /* Schedules.xib */,
-				ACA84D5E14DFD771005EA159 /* SchedulesViewController.h */,
-				ACA84D5F14DFD771005EA159 /* SchedulesViewController.m */,
-				ACA84D6014DFD771005EA159 /* SplitViewController.h */,
-				ACA84D6114DFD771005EA159 /* SplitViewController.m */,
-				ACA84D4214DFD6E1005EA159 /* Document.xcdatamodeld */,
+				ACA84D8114DFD986005EA159 /* Controllers */,
+				ACA84D8014DFD977005EA159 /* Views */,
+				ACA84D7F14DFD967005EA159 /* Models */,
+				ACA84D7E14DFD954005EA159 /* Resources */,
 				ACA84D2E14DFD6E1005EA159 /* Supporting Files */,
 			);
 			path = Actual;
@@ -173,6 +151,76 @@
 				ACA84D3614DFD6E1005EA159 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ACA84D7E14DFD954005EA159 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ACA84D7B14DFD831005EA159 /* MainMenu.xib */,
+				ACA84D4A14DFD771005EA159 /* Content.xib */,
+				ACA84D4F14DFD771005EA159 /* Document.xib */,
+				ACA84D5214DFD771005EA159 /* Items.xib */,
+				ACA84D5514DFD771005EA159 /* Player.xib */,
+				ACA84D5A14DFD771005EA159 /* Preferences.xib */,
+				ACA84D5D14DFD771005EA159 /* Schedules.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		ACA84D7F14DFD967005EA159 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ACA84D4D14DFD771005EA159 /* Document.h */,
+				ACA84D4E14DFD771005EA159 /* Document.m */,
+				ACA84D4214DFD6E1005EA159 /* Document.xcdatamodeld */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		ACA84D8014DFD977005EA159 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ACA84D5614DFD771005EA159 /* PlayerView.h */,
+				ACA84D5714DFD771005EA159 /* PlayerView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		ACA84D8114DFD986005EA159 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ACA84D8314DFD9A0005EA159 /* View Controllers */,
+				ACA84D8214DFD98E005EA159 /* Window Controllers */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		ACA84D8214DFD98E005EA159 /* Window Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ACA84D5014DFD771005EA159 /* DocumentWindowController.h */,
+				ACA84D5114DFD771005EA159 /* DocumentWindowController.m */,
+				ACA84D5B14DFD771005EA159 /* PreferencesWindowController.h */,
+				ACA84D5C14DFD771005EA159 /* PreferencesWindowController.m */,
+			);
+			name = "Window Controllers";
+			sourceTree = "<group>";
+		};
+		ACA84D8314DFD9A0005EA159 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ACA84D4B14DFD771005EA159 /* ContentViewController.h */,
+				ACA84D4C14DFD771005EA159 /* ContentViewController.m */,
+				ACA84D5314DFD771005EA159 /* ItemsViewController.h */,
+				ACA84D5414DFD771005EA159 /* ItemsViewController.m */,
+				ACA84D5814DFD771005EA159 /* PlayerViewController.h */,
+				ACA84D5914DFD771005EA159 /* PlayerViewController.m */,
+				ACA84D5E14DFD771005EA159 /* SchedulesViewController.h */,
+				ACA84D5F14DFD771005EA159 /* SchedulesViewController.m */,
+				ACA84D6014DFD771005EA159 /* SplitViewController.h */,
+				ACA84D6114DFD771005EA159 /* SplitViewController.m */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
