@@ -10,17 +10,23 @@
 
 @implementation ItemsViewController
 
-@synthesize itemsController = _itemsController;
+@synthesize tableView = _tableView;
+@synthesize selectedRow = _selectedRow;
 @synthesize managedObjectContext = _managedObjectContext;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Initialization code here.
+        
     }
     
     return self;
+}
+
+- (void)tableViewSelectionDidChange:(NSNotification *)notification {    
+    NSTableView *tableView = [notification object];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"itemTableViewSelectionDidChange" object:tableView];
 }
 
 @end

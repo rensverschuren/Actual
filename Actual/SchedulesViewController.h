@@ -13,7 +13,8 @@
 @interface SchedulesViewController : NSViewController
 
 @property (weak) IBOutlet NSView *status;
-@property (strong) NSManagedObjectContext *managedObjectContext;
-@property (strong) NSArrayController *itemsController;
+@property (weak) NSArrayController *schedulesController;
+
+- (void)action;
 
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC0B58F814E17DF500F63F7B /* Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0B58F714E17DF500F63F7B /* Schedule.m */; };
+		AC0B590014E17E6100F63F7B /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0B58FF14E17E6100F63F7B /* Item.m */; };
 		ACA84D2814DFD6E1005EA159 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA84D2714DFD6E1005EA159 /* Cocoa.framework */; };
 		ACA84D3214DFD6E1005EA159 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ACA84D3014DFD6E1005EA159 /* InfoPlist.strings */; };
 		ACA84D3414DFD6E1005EA159 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA84D3314DFD6E1005EA159 /* main.m */; };
@@ -34,6 +36,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC0B58F614E17DF500F63F7B /* Schedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Schedule.h; sourceTree = "<group>"; };
+		AC0B58F714E17DF500F63F7B /* Schedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Schedule.m; sourceTree = "<group>"; };
+		AC0B58FE14E17E6100F63F7B /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		AC0B58FF14E17E6100F63F7B /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		ACA84D2314DFD6E0005EA159 /* Actual.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Actual.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA84D2714DFD6E1005EA159 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		ACA84D2A14DFD6E1005EA159 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -132,9 +138,9 @@
 		ACA84D2D14DFD6E1005EA159 /* Actual */ = {
 			isa = PBXGroup;
 			children = (
-				ACA84D8114DFD986005EA159 /* Controllers */,
-				ACA84D8014DFD977005EA159 /* Views */,
 				ACA84D7F14DFD967005EA159 /* Models */,
+				ACA84D8014DFD977005EA159 /* Views */,
+				ACA84D8114DFD986005EA159 /* Controllers */,
 				ACA84D7E14DFD954005EA159 /* Resources */,
 				ACA84D2E14DFD6E1005EA159 /* Supporting Files */,
 			);
@@ -173,6 +179,10 @@
 				ACA84D4D14DFD771005EA159 /* Document.h */,
 				ACA84D4E14DFD771005EA159 /* Document.m */,
 				ACA84D4214DFD6E1005EA159 /* Document.xcdatamodeld */,
+				AC0B58F614E17DF500F63F7B /* Schedule.h */,
+				AC0B58F714E17DF500F63F7B /* Schedule.m */,
+				AC0B58FE14E17E6100F63F7B /* Item.h */,
+				AC0B58FF14E17E6100F63F7B /* Item.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -303,6 +313,8 @@
 				ACA84D6D14DFD771005EA159 /* PreferencesWindowController.m in Sources */,
 				ACA84D6F14DFD771005EA159 /* SchedulesViewController.m in Sources */,
 				ACA84D7014DFD771005EA159 /* SplitViewController.m in Sources */,
+				AC0B58F814E17DF500F63F7B /* Schedule.m in Sources */,
+				AC0B590014E17E6100F63F7B /* Item.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +436,7 @@
 				ACA84D4914DFD6E1005EA159 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

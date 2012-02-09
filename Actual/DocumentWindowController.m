@@ -15,6 +15,7 @@
 @implementation DocumentWindowController
 
 @synthesize itemsController = _itemsController;
+@synthesize managedObjectContext = _managedObjectContext;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -31,24 +32,29 @@
     [super windowDidLoad];    
 }
 
-- (void)awakeFromNib { 
+- (void)awakeFromNib {       
+    _managedObjectContext = [[self document] managedObjectContext];
+    
     //set the subviews of the splitview to minimum size -> displaying them
     [_splitView setPosition:-200.0 ofDividerAtIndex:0];
-    [_splitView setPosition:276.0 ofDividerAtIndex:1];
+    [_splitView setPosition:300.0 ofDividerAtIndex:1];
     
     _schedulesViewController = [[SchedulesViewController alloc] initWithNibName:@"Schedules" bundle:nil];    
     _contentViewController = [[ContentViewController alloc] initWithNibName:@"Content" bundle:nil];    
     _playerViewController = [[PlayerViewController alloc] initWithNibName:@"Player" bundle:nil];
-    _itemsViewController = [[ItemsViewController alloc] initWithNibName:@"Items" bundle:nil];
+    _itemsViewController = [[ItemsViewController alloc] initWithNibName:@"Items" bundle:nil];  
     
-    _itemsViewController.itemsController = _itemsController;
-    _itemsViewController.managedObjectContext = [[self document] managedObjectContext]; 
+    _itemsViewController.managedObjectContext = _managedObjectContext;    
+        
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(action:) name:@"itemTableViewSelectionDidChange" object:nil];    
+}
+
+- (void)action:(NSNotification *)notification {
+    NSTableView *tableView = [notification object];
     
-    //setting the subview's managedObjectContext    
-    _schedulesViewController.managedObjectContext = [[self document] managedObjectContext];   
-    [_schedulesViewController.itemsController bind:@"contentSet" toObject:_itemsController withKeyPath:@"selection.schedules" options:nil];
-    
-    //[_schedulesViewController bind:@"schedulesController.arrangedObjects" toObject:_itemsController withKeyPath:@"selection.schedules" options:nil];
+    if([tableView selectedRow] != -1) {
+        NSLog(@"haaaaaaaaa %@", [_itemsController selectedObjects]);
+    }
 }
 
 - (IBAction)changeInspectorView:(id)sender {
@@ -94,11 +100,12 @@
     [progressIndicator removeFromSuperview];    
 }
 
-- (IBAction)changeMiddleView:(id)sender {
+- (IBAction)changeMiddleView:(id)sender {  
+    [_itemsController add:nil];
     _middleView.subviews = [NSArray array];
     [_middleView addSubview:[_itemsViewController view]];
     NSView *subView = [[_middleView subviews] objectAtIndex:0];
-    subView.frame = _middleView.bounds;
+    subView.frame = _middleView.bounds;    
 }
 
 @end

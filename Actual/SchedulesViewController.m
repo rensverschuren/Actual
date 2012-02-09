@@ -12,9 +12,7 @@
 @implementation SchedulesViewController
 
 @synthesize status = _status;
-
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize itemsController = _itemsController;
+@synthesize schedulesController = _schedulesController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,6 +30,12 @@
     [imageView setImageScaling:NSScaleNone];
     [imageView setImage:[NSImage imageNamed:NSImageNameStatusAvailable]];
     [_status addSubview:imageView];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(action) name:@"itemTableViewSelectionDidChange" object:nil];
+}
+
+- (void)action {
+    NSLog(@"goed bezig");
 }
 
 @end

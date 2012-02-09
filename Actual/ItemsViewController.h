@@ -8,9 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ItemsViewController : NSViewController
+@interface ItemsViewController : NSViewController <NSTableViewDelegate>
 
-@property (strong) NSArrayController *itemsController;
+@property (strong) IBOutlet NSTableView *tableView;
 @property (strong) NSManagedObjectContext *managedObjectContext;
+@property NSInteger selectedRow;
 
 @end

@@ -28,10 +28,10 @@
     IBOutlet NSTableView *mainTable;    
 }
 
-@property (strong) NSArrayController *itemsController;
+@property (weak) IBOutlet NSArrayController *itemsController;
+@property (strong) NSManagedObjectContext *managedObjectContext;
 
 - (IBAction)changeInspectorView:(id)sender;
-
-
+- (void)action;
 
 @end
