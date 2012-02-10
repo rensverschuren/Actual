@@ -7,11 +7,19 @@
     </entity>
     <entity name="Schedule" representedClassName="Schedule" syncable="YES">
         <attribute name="enabled" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="every_day" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="friday" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="monday" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="saturday" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="sunday" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thursday" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="tuesday" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="wednesday" optional="YES" attributeType="Boolean" syncable="YES"/>
         <relationship name="item" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="schedules" inverseEntity="Item" syncable="YES"/>
     </entity>
     <elements>
         <element name="Item" positionX="160" positionY="192" width="128" height="90"/>
-        <element name="Schedule" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="Schedule" positionX="160" positionY="192" width="128" height="210"/>
     </elements>
 </model>

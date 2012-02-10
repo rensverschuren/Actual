@@ -12,7 +12,8 @@
 @implementation SchedulesViewController
 
 @synthesize status = _status;
-@synthesize schedulesController = _schedulesController;
+@synthesize item = _item;
+@synthesize managedObjectContext = _managedObjectContext;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,13 +30,17 @@
     NSImageView *imageView = [[NSImageView alloc] initWithFrame:frame];
     [imageView setImageScaling:NSScaleNone];
     [imageView setImage:[NSImage imageNamed:NSImageNameStatusAvailable]];
-    [_status addSubview:imageView];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(action) name:@"itemTableViewSelectionDidChange" object:nil];
+    [_status addSubview:imageView];    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"itemTableViewSelectionDidChange" object:nil];
 }
 
-- (void)action {
-    NSLog(@"goed bezig");
+- (void)updateView:(NSNotification *)notification { 
+    NSArrayController *itemsController = [notification object];
+    NSArray *items = [itemsController selectedObjects];
+    
+    if([items count] > 0) {
+        [self setValue:[items objectAtIndex:0] forKey:@"item"];            
+    }    
 }
 
 @end

@@ -13,8 +13,9 @@
 @interface SchedulesViewController : NSViewController
 
 @property (weak) IBOutlet NSView *status;
-@property (weak) NSArrayController *schedulesController;
+@property (strong) NSManagedObject *item;
+@property (strong) NSManagedObjectContext *managedObjectContext;
 
-- (void)action;
+- (void)updateView:(NSNotification *)notification;
 
 @end

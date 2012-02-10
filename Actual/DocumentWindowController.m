@@ -14,7 +14,6 @@
 
 @implementation DocumentWindowController
 
-@synthesize itemsController = _itemsController;
 @synthesize managedObjectContext = _managedObjectContext;
 
 - (id)initWithWindow:(NSWindow *)window
@@ -45,16 +44,7 @@
     _itemsViewController = [[ItemsViewController alloc] initWithNibName:@"Items" bundle:nil];  
     
     _itemsViewController.managedObjectContext = _managedObjectContext;    
-        
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(action:) name:@"itemTableViewSelectionDidChange" object:nil];    
-}
-
-- (void)action:(NSNotification *)notification {
-    NSTableView *tableView = [notification object];
-    
-    if([tableView selectedRow] != -1) {
-        NSLog(@"haaaaaaaaa %@", [_itemsController selectedObjects]);
-    }
+    _schedulesViewController.managedObjectContext = _managedObjectContext;     
 }
 
 - (IBAction)changeInspectorView:(id)sender {
@@ -100,8 +90,7 @@
     [progressIndicator removeFromSuperview];    
 }
 
-- (IBAction)changeMiddleView:(id)sender {  
-    [_itemsController add:nil];
+- (IBAction)changeMiddleView:(id)sender {     
     _middleView.subviews = [NSArray array];
     [_middleView addSubview:[_itemsViewController view]];
     NSView *subView = [[_middleView subviews] objectAtIndex:0];

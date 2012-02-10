@@ -11,7 +11,7 @@
 @interface ItemsViewController : NSViewController <NSTableViewDelegate>
 
 @property (strong) IBOutlet NSTableView *tableView;
+@property (weak) IBOutlet NSArrayController *itemsController;
 @property (strong) NSManagedObjectContext *managedObjectContext;
-@property NSInteger selectedRow;
 
 @end
