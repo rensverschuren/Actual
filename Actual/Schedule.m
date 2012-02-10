@@ -23,9 +23,12 @@
     //set every_week to YES
     [self setValue:[NSNumber numberWithBool:YES] forKey:@"every_week"];
     
-    //set valid_from and valid_to to YES
+    //set valid_from and valid_to
     [self setValue:[NSDate date] forKey:@"valid_from"];
     [self setValue:[NSDate date] forKey:@"valid_to"];
+    //set valid_from_enabled and valid_to_enabled to NO
+    [self setValue:[NSNumber numberWithBool:NO] forKey:@"valid_from_enabled"];
+    [self setValue:[NSNumber numberWithBool:NO] forKey:@"valid_to_enabled"];
     
     //set valid daily times
     [self setValue:[NSDate dateWithString:@"1982-02-12 00:00:00 +0100"] forKey:@"daily_from"];
@@ -41,6 +44,12 @@
         [weeks addObject:[NSNumber numberWithBool:YES]];        
     }
     [self setValue:weeks forKey:@"weeks"];    
+    
+    //set default description text
+    [self setValue:@"New schedule" forKey:@"text"];
+    
+    //schedules are enabled by default
+    [self setValue:[NSNumber numberWithBool:YES] forKey:@"enabled"];
 }
 
 - (BOOL)nowIsWithinValidDateRange {

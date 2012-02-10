@@ -31,6 +31,6 @@
 @property (strong) NSManagedObjectContext *managedObjectContext;
 
 - (IBAction)changeInspectorView:(id)sender;
-- (void)action;
+- (IBAction)changeMiddleView:(id)sender;
 
 @end

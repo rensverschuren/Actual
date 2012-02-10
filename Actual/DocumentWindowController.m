@@ -38,6 +38,8 @@
     [_splitView setPosition:-200.0 ofDividerAtIndex:0];
     [_splitView setPosition:300.0 ofDividerAtIndex:1];
     
+    _splitView.autoresizingMask = NSViewHeightSizable;
+    
     _schedulesViewController = [[SchedulesViewController alloc] initWithNibName:@"Schedules" bundle:nil];    
     _contentViewController = [[ContentViewController alloc] initWithNibName:@"Content" bundle:nil];    
     _playerViewController = [[PlayerViewController alloc] initWithNibName:@"Player" bundle:nil];
@@ -95,6 +97,8 @@
     [_middleView addSubview:[_itemsViewController view]];
     NSView *subView = [[_middleView subviews] objectAtIndex:0];
     subView.frame = _middleView.bounds;    
+    subView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    
 }
 
 @end
