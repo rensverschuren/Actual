@@ -47,6 +47,12 @@
     
     _itemsViewController.managedObjectContext = _managedObjectContext;    
     _schedulesViewController.managedObjectContext = _managedObjectContext;     
+    
+    _middleView.subviews = [NSArray array];
+    [_middleView addSubview:[_itemsViewController view]];
+    NSView *subView = [[_middleView subviews] objectAtIndex:0];
+    subView.frame = _middleView.bounds;    
+    subView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
 }
 
 - (IBAction)changeInspectorView:(id)sender {
@@ -90,15 +96,6 @@
     
     //remove the progressIndicator from the inspector view    
     [progressIndicator removeFromSuperview];    
-}
-
-- (IBAction)changeMiddleView:(id)sender {     
-    _middleView.subviews = [NSArray array];
-    [_middleView addSubview:[_itemsViewController view]];
-    NSView *subView = [[_middleView subviews] objectAtIndex:0];
-    subView.frame = _middleView.bounds;    
-    subView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
-    
 }
 
 @end

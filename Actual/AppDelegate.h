@@ -1,5 +1,5 @@
 //
-//  PreferencesWindowController.h
+//  AppDelegate.h
 //  Actual
 //
 //  Created by Rens Verschuren on 11-02-12.
@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface PreferencesWindowController : NSWindowController
+@interface AppDelegate : NSObject <NSApplicationDelegate>
+
+- (IBAction)openPreferencesWindow:(id)sender;
 
 @end

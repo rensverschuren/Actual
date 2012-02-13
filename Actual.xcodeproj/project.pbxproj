@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AC0B58F814E17DF500F63F7B /* Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0B58F714E17DF500F63F7B /* Schedule.m */; };
 		AC0B590014E17E6100F63F7B /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0B58FF14E17E6100F63F7B /* Item.m */; };
+		AC5463B314E676B50041E26C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5463B214E676B50041E26C /* AppDelegate.m */; };
+		AC5463B714E67CD60041E26C /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5463B614E67CD60041E26C /* PreferencesWindowController.m */; };
 		ACA84D2814DFD6E1005EA159 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA84D2714DFD6E1005EA159 /* Cocoa.framework */; };
 		ACA84D3214DFD6E1005EA159 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ACA84D3014DFD6E1005EA159 /* InfoPlist.strings */; };
 		ACA84D3414DFD6E1005EA159 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA84D3314DFD6E1005EA159 /* main.m */; };
@@ -25,7 +27,6 @@
 		ACA84D6A14DFD771005EA159 /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA84D5714DFD771005EA159 /* PlayerView.m */; };
 		ACA84D6B14DFD771005EA159 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA84D5914DFD771005EA159 /* PlayerViewController.m */; };
 		ACA84D6C14DFD771005EA159 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACA84D5A14DFD771005EA159 /* Preferences.xib */; };
-		ACA84D6D14DFD771005EA159 /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA84D5C14DFD771005EA159 /* PreferencesWindowController.m */; };
 		ACA84D6E14DFD771005EA159 /* Schedules.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACA84D5D14DFD771005EA159 /* Schedules.xib */; };
 		ACA84D6F14DFD771005EA159 /* SchedulesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA84D5F14DFD771005EA159 /* SchedulesViewController.m */; };
 		ACA84D7014DFD771005EA159 /* SplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA84D6114DFD771005EA159 /* SplitViewController.m */; };
@@ -40,6 +41,10 @@
 		AC0B58F714E17DF500F63F7B /* Schedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Schedule.m; sourceTree = "<group>"; };
 		AC0B58FE14E17E6100F63F7B /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		AC0B58FF14E17E6100F63F7B /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		AC5463B114E676B50041E26C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AC5463B214E676B50041E26C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AC5463B514E67CD60041E26C /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindowController.h; sourceTree = "<group>"; };
+		AC5463B614E67CD60041E26C /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindowController.m; sourceTree = "<group>"; };
 		ACA84D2314DFD6E0005EA159 /* Actual.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Actual.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA84D2714DFD6E1005EA159 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		ACA84D2A14DFD6E1005EA159 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -68,8 +73,6 @@
 		ACA84D5814DFD771005EA159 /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
 		ACA84D5914DFD771005EA159 /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		ACA84D5A14DFD771005EA159 /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
-		ACA84D5B14DFD771005EA159 /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindowController.h; sourceTree = "<group>"; };
-		ACA84D5C14DFD771005EA159 /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindowController.m; sourceTree = "<group>"; };
 		ACA84D5D14DFD771005EA159 /* Schedules.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Schedules.xib; sourceTree = "<group>"; };
 		ACA84D5E14DFD771005EA159 /* SchedulesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchedulesViewController.h; sourceTree = "<group>"; };
 		ACA84D5F14DFD771005EA159 /* SchedulesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchedulesViewController.m; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 				ACA84D8114DFD986005EA159 /* Controllers */,
 				ACA84D7E14DFD954005EA159 /* Resources */,
 				ACA84D2E14DFD6E1005EA159 /* Supporting Files */,
+				AC5463B114E676B50041E26C /* AppDelegate.h */,
+				AC5463B214E676B50041E26C /* AppDelegate.m */,
 			);
 			path = Actual;
 			sourceTree = "<group>";
@@ -210,8 +215,8 @@
 			children = (
 				ACA84D5014DFD771005EA159 /* DocumentWindowController.h */,
 				ACA84D5114DFD771005EA159 /* DocumentWindowController.m */,
-				ACA84D5B14DFD771005EA159 /* PreferencesWindowController.h */,
-				ACA84D5C14DFD771005EA159 /* PreferencesWindowController.m */,
+				AC5463B514E67CD60041E26C /* PreferencesWindowController.h */,
+				AC5463B614E67CD60041E26C /* PreferencesWindowController.m */,
 			);
 			name = "Window Controllers";
 			sourceTree = "<group>";
@@ -310,11 +315,12 @@
 				ACA84D6814DFD771005EA159 /* ItemsViewController.m in Sources */,
 				ACA84D6A14DFD771005EA159 /* PlayerView.m in Sources */,
 				ACA84D6B14DFD771005EA159 /* PlayerViewController.m in Sources */,
-				ACA84D6D14DFD771005EA159 /* PreferencesWindowController.m in Sources */,
 				ACA84D6F14DFD771005EA159 /* SchedulesViewController.m in Sources */,
 				ACA84D7014DFD771005EA159 /* SplitViewController.m in Sources */,
 				AC0B58F814E17DF500F63F7B /* Schedule.m in Sources */,
 				AC0B590014E17E6100F63F7B /* Item.m in Sources */,
+				AC5463B314E676B50041E26C /* AppDelegate.m in Sources */,
+				AC5463B714E67CD60041E26C /* PreferencesWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

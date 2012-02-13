@@ -2,7 +2,7 @@
 //  PreferencesWindowController.m
 //  Actual
 //
-//  Created by Rens Verschuren on 02-02-12.
+//  Created by Rens Verschuren on 11-02-12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11C74" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11D50" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Item" syncable="YES">
         <attribute name="enabled" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="filePath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" defaultValueString="Beschrijving" syncable="YES"/>
         <relationship name="schedules" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Schedule" inverseName="item" inverseEntity="Schedule" syncable="YES"/>
     </entity>
@@ -13,6 +14,7 @@
         <attribute name="every_week" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="friday" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="monday" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="rule" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="saturday" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="sunday" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
@@ -27,7 +29,7 @@
         <relationship name="item" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="schedules" inverseEntity="Item" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Item" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="Item" positionX="160" positionY="192" width="128" height="105"/>
         <element name="Schedule" positionX="160" positionY="192" width="128" height="330"/>
     </elements>
 </model>
