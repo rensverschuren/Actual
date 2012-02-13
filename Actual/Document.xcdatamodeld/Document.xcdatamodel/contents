@@ -30,6 +30,6 @@
     </entity>
     <elements>
         <element name="Item" positionX="160" positionY="192" width="128" height="105"/>
-        <element name="Schedule" positionX="160" positionY="192" width="128" height="330"/>
+        <element name="Schedule" positionX="160" positionY="192" width="128" height="345"/>
     </elements>
 </model>
