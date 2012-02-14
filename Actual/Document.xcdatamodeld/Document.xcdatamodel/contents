@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11D50" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Item" syncable="YES">
+    <entity name="Group" representedClassName="Group" parentEntity="Item" syncable="YES"/>
+    <entity name="Item" representedClassName="Item" isAbstract="YES" syncable="YES">
         <attribute name="enabled" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
         <attribute name="filePath" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="text" optional="YES" attributeType="String" defaultValueString="Beschrijving" syncable="YES"/>
-        <relationship name="schedules" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Schedule" inverseName="item" inverseEntity="Schedule" syncable="YES"/>
+        <attribute name="isGroup" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="sortIndex" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="children" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="parent" inverseEntity="Item" syncable="YES"/>
+        <relationship name="parent" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="children" inverseEntity="Item" syncable="YES"/>
+        <relationship name="schedules" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Schedule" inverseName="item" inverseEntity="Schedule" syncable="YES"/>
     </entity>
+    <entity name="Leaf" representedClassName="Leaf" parentEntity="Item" syncable="YES"/>
+    <entity name="QuartzComposition" representedClassName="QuartzComposition" parentEntity="Leaf" syncable="YES"/>
     <entity name="Schedule" representedClassName="Schedule" syncable="YES">
         <attribute name="daily_from" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="daily_to" optional="YES" attributeType="Date" syncable="YES"/>
@@ -26,10 +34,15 @@
         <attribute name="valid_to_enabled" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="wednesday" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="weeks" optional="YES" attributeType="Transformable" syncable="YES"/>
-        <relationship name="item" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="schedules" inverseEntity="Item" syncable="YES"/>
+        <relationship name="item" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="schedules" inverseEntity="Item" syncable="YES"/>
     </entity>
+    <entity name="Video" representedClassName="Video" parentEntity="Leaf" syncable="YES"/>
     <elements>
-        <element name="Item" positionX="160" positionY="192" width="128" height="105"/>
-        <element name="Schedule" positionX="160" positionY="192" width="128" height="345"/>
+        <element name="Group" positionX="61" positionY="180" width="128" height="45"/>
+        <element name="Item" positionX="-18" positionY="-45" width="128" height="165"/>
+        <element name="Leaf" positionX="-126" positionY="180" width="128" height="45"/>
+        <element name="QuartzComposition" positionX="45" positionY="351" width="128" height="45"/>
+        <element name="Schedule" positionX="423" positionY="-0" width="128" height="60"/>
+        <element name="Video" positionX="-126" positionY="351" width="128" height="45"/>
     </elements>
 </model>

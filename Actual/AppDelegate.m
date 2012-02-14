@@ -7,11 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "PreferencesWindowController.h"
 
 @implementation AppDelegate
 
 - (IBAction)openPreferencesWindow:(id)sender {
-    NSWindowController *preferencesWindowController = [[NSWindowController alloc] initWithWindowNibName:@"Preferences"];
+    PreferencesWindowController *preferencesWindowController = [[PreferencesWindowController alloc] initWithWindowNibName:@"Preferences"];
     [[preferencesWindowController window] center];    
     [preferencesWindowController showWindow:sender];    
 }

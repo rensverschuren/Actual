@@ -7,9 +7,10 @@
 //
 
 #import <CoreData/CoreData.h>
+#import <Cocoa/Cocoa.h>
 
 @interface Item : NSManagedObject
 
-- (void)awakeFromInsert;
+@property (readonly) NSImage *image;
 
 @end

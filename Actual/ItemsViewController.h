@@ -8,10 +8,15 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ItemsViewController : NSViewController <NSTableViewDelegate>
+@interface ItemsViewController : NSViewController <NSOutlineViewDataSource, NSOutlineViewDelegate> 
 
-@property (strong) IBOutlet NSTableView *tableView;
-@property (weak) IBOutlet NSArrayController *itemsController;
 @property (strong) NSManagedObjectContext *managedObjectContext;
+@property (weak) IBOutlet NSOutlineView *outlineView;
+@property (weak) IBOutlet NSTreeController *treeController;
+@property (strong) NSArray *dragType;
+@property (strong) NSTreeNode *draggedNode;
+
+- (IBAction)newGroup:(id)sender;
+- (IBAction)newLeaf:(id)sender;
 
 @end

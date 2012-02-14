@@ -11,5 +11,9 @@
 @interface ContentViewController : NSViewController
 
 @property (weak) IBOutlet NSView *contentView;
+@property (strong) NSWindow *window;
+@property (strong) NSManagedObject *item;
+
+- (IBAction)browseFile:(id)sender;
 
 @end

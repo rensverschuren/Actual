@@ -46,7 +46,8 @@
     _itemsViewController = [[ItemsViewController alloc] initWithNibName:@"Items" bundle:nil];  
     
     _itemsViewController.managedObjectContext = _managedObjectContext;    
-    _schedulesViewController.managedObjectContext = _managedObjectContext;     
+    _schedulesViewController.managedObjectContext = _managedObjectContext;    
+    _contentViewController.window = [self window];
     
     _middleView.subviews = [NSArray array];
     [_middleView addSubview:[_itemsViewController view]];

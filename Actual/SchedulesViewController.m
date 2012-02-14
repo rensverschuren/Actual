@@ -31,16 +31,15 @@
     [imageView setImageScaling:NSScaleNone];
     [imageView setImage:[NSImage imageNamed:NSImageNameStatusAvailable]];
     [_status addSubview:imageView];    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"itemTableViewSelectionDidChange" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"itemOutlineViewSelectionDidChange" object:nil];
 }
 
-- (void)updateView:(NSNotification *)notification { 
-    NSArrayController *itemsController = [notification object];
-    NSArray *items = [itemsController selectedObjects];
-    
-    if([items count] > 0) {
-        [self setValue:[items objectAtIndex:0] forKey:@"item"];            
-    }    
+- (void)updateView:(NSNotification *)notification {     
+    NSTreeController *treeController = [notification object];  
+    NSLog(@"%@", [treeController selectionIndexPaths]);
+    //if([items count] > 0) {
+    //    [self setValue:[items objectAtIndex:0] forKey:@"item"];            
+    //}    
 }
 
 @end
