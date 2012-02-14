@@ -28,6 +28,7 @@
 }
 
 - (void)outlineViewSelectionDidChange:(NSNotification *)notification {   
+    NSLog(@"%@", [_treeController selectedObjects]);
     NSNotification *postedNotification = [NSNotification notificationWithName:@"itemOutlineViewSelectionDidChange" object:_treeController];
     [[NSNotificationCenter defaultCenter] postNotification:postedNotification];
 }
@@ -36,8 +37,8 @@
     _dragType = [NSArray arrayWithObject:@"factorialDragType"];
     [_outlineView registerForDraggedTypes:_dragType];
     
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"text" ascending:YES];
-    [_treeController setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    //NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"text" ascending:YES];
+    //[_treeController setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
 }
 
 //- (BOOL)category:(NSManagedObject *)cat 
