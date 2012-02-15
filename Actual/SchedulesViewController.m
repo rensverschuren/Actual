@@ -35,11 +35,11 @@
 }
 
 - (void)updateView:(NSNotification *)notification {     
-    NSTreeController *treeController = [notification object];  
-    //NSLog(@"%@", [treeController selectionIndexPaths]);
-    //if([items count] > 0) {
-    //    [self setValue:[items objectAtIndex:0] forKey:@"item"];            
-    //}    
+    NSTreeController *treeController = [notification object];
+    NSArray *items = [treeController selectedObjects];
+    if([items count] > 0) {
+        [self setValue:[items objectAtIndex:0] forKey:@"item"];            
+    }    
 }
 
 @end

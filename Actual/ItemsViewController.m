@@ -33,7 +33,7 @@
     [[NSNotificationCenter defaultCenter] postNotification:postedNotification];
 }
 
-- (void)awakeFromNib {
+- (void)awakeFromNib {    
     _dragType = [NSArray arrayWithObject:@"factorialDragType"];
     [_outlineView registerForDraggedTypes:_dragType];
     
