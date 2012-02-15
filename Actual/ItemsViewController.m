@@ -27,8 +27,7 @@
     return self;
 }
 
-- (void)outlineViewSelectionDidChange:(NSNotification *)notification {   
-    NSLog(@"%@", [_treeController selectedObjects]);
+- (void)outlineViewSelectionDidChange:(NSNotification *)notification {    
     NSNotification *postedNotification = [NSNotification notificationWithName:@"itemOutlineViewSelectionDidChange" object:_treeController];
     [[NSNotificationCenter defaultCenter] postNotification:postedNotification];
 }
@@ -88,8 +87,16 @@
 }
 
 - (IBAction)newLeaf:(id)sender {
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"QuartzComposition" inManagedObjectContext:_managedObjectContext];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Video" inManagedObjectContext:_managedObjectContext];
     NSManagedObject *item = [[Item alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:_managedObjectContext]; 
+}
+
+- (IBAction)removeItem:(id)sender {
+    //check if an item is selected
+    if([_treeController selectionIndexPath]) {
+        //remove the selected item from the _treeController
+        [_treeController removeObjectAtArrangedObjectIndexPath:[_treeController selectionIndexPath]];
+    }
 }
 
 @end

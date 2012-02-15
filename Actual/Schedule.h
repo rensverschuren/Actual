@@ -18,6 +18,8 @@
 @property BOOL saturday;
 @property BOOL sunday;
 
+@property (readonly) BOOL isValid;
+
 - (BOOL)nowIsWithinValidDateRange;
 - (BOOL)nowIsWithinValidDailyTimeRange;
 - (BOOL)nowisOnWeekDay;

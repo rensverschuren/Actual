@@ -18,6 +18,8 @@
 @synthesize saturday = _saturday;
 @synthesize sunday = _sunday;
 
+@synthesize isValid = _isValid;
+
 //setting all the default values for a schedule
 - (void)awakeFromInsert {
     //set every_week to YES

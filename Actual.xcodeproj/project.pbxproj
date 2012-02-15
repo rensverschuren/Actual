@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AC0B58F814E17DF500F63F7B /* Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0B58F714E17DF500F63F7B /* Schedule.m */; };
 		AC0B590014E17E6100F63F7B /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0B58FF14E17E6100F63F7B /* Item.m */; };
+		AC33810D14EBEE910098E7EB /* Add.icns in Resources */ = {isa = PBXBuildFile; fileRef = AC33810C14EBEE910098E7EB /* Add.icns */; };
 		AC3B972714E95EBA005246A8 /* Leaf.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3B972614E95EB9005246A8 /* Leaf.m */; };
 		AC3B972B14E95F19005246A8 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3B972A14E95F18005246A8 /* Group.m */; };
 		AC3B972D14E96561005246A8 /* folder.icns in Resources */ = {isa = PBXBuildFile; fileRef = AC3B972C14E96560005246A8 /* folder.icns */; };
@@ -49,6 +50,7 @@
 		AC0B58F714E17DF500F63F7B /* Schedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Schedule.m; sourceTree = "<group>"; };
 		AC0B58FE14E17E6100F63F7B /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		AC0B58FF14E17E6100F63F7B /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		AC33810C14EBEE910098E7EB /* Add.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Add.icns; sourceTree = "<group>"; };
 		AC3B972514E95EB9005246A8 /* Leaf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Leaf.h; sourceTree = "<group>"; };
 		AC3B972614E95EB9005246A8 /* Leaf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Leaf.m; sourceTree = "<group>"; };
 		AC3B972914E95F18005246A8 /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		AC3B972E14E9657F005246A8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AC33810C14EBEE910098E7EB /* Add.icns */,
 				AC3B973614E9801F005246A8 /* quartz.icns */,
 				AC3B973414E97DF5005246A8 /* picture.icns */,
 				AC3B972F14E974CF005246A8 /* video.icns */,
@@ -341,6 +344,7 @@
 				AC3B973014E974CF005246A8 /* video.icns in Resources */,
 				AC3B973514E97DF5005246A8 /* picture.icns in Resources */,
 				AC3B973714E9801F005246A8 /* quartz.icns in Resources */,
+				AC33810D14EBEE910098E7EB /* Add.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

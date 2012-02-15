@@ -38,7 +38,7 @@
     NSTreeController *treeController = [notification object];
     NSArray *items = [treeController selectedObjects];
     if([items count] > 0) {
-        [self setValue:[items objectAtIndex:0] forKey:@"item"];            
+        [self setValue:[items objectAtIndex:0] forKey:@"item"];        
     }    
 }
 

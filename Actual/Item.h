@@ -12,5 +12,6 @@
 @interface Item : NSManagedObject
 
 @property (readonly) NSImage *image;
+@property (readonly) NSString *urlShort;
 
 @end

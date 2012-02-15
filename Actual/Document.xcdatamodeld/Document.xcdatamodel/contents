@@ -39,10 +39,10 @@
     <entity name="Video" representedClassName="Video" parentEntity="Leaf" syncable="YES"/>
     <elements>
         <element name="Group" positionX="61" positionY="180" width="128" height="45"/>
-        <element name="Item" positionX="-18" positionY="-45" width="128" height="165"/>
+        <element name="Item" positionX="-27" positionY="-144" width="128" height="180"/>
         <element name="Leaf" positionX="-126" positionY="180" width="128" height="45"/>
         <element name="QuartzComposition" positionX="45" positionY="351" width="128" height="45"/>
-        <element name="Schedule" positionX="423" positionY="-0" width="128" height="60"/>
+        <element name="Schedule" positionX="412" positionY="-216" width="128" height="330"/>
         <element name="Video" positionX="-126" positionY="351" width="128" height="45"/>
     </elements>
 </model>

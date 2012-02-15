@@ -36,9 +36,7 @@
     
     //set the subviews of the splitview to minimum size -> displaying them
     [_splitView setPosition:-200.0 ofDividerAtIndex:0];
-    [_splitView setPosition:300.0 ofDividerAtIndex:1];
-    
-    _splitView.autoresizingMask = NSViewHeightSizable;
+    [_splitView setPosition:400 ofDividerAtIndex:1];    
     
     _schedulesViewController = [[SchedulesViewController alloc] initWithNibName:@"Schedules" bundle:nil];    
     _contentViewController = [[ContentViewController alloc] initWithNibName:@"Content" bundle:nil];    
@@ -46,7 +44,8 @@
     _itemsViewController = [[ItemsViewController alloc] initWithNibName:@"Items" bundle:nil];  
     
     _itemsViewController.managedObjectContext = _managedObjectContext;    
-    _schedulesViewController.managedObjectContext = _managedObjectContext;    
+    _schedulesViewController.managedObjectContext = _managedObjectContext;  
+    _contentViewController.managedObjectContext = _managedObjectContext;
     _contentViewController.window = [self window];
     
     _middleView.subviews = [NSArray array];
@@ -75,6 +74,7 @@
     switch (selectedControl) {
         case 0:            
             [_inspectorView addSubview:[_contentViewController view]];           
+            [_contentViewController setupPlayer];
             break;
         case 1:
             [_inspectorView addSubview:[_schedulesViewController view]];

@@ -12,11 +12,12 @@
 
 @property (strong) NSManagedObjectContext *managedObjectContext;
 @property (weak) IBOutlet NSOutlineView *outlineView;
-@property (strong) IBOutlet NSTreeController *treeController;
+@property (weak) IBOutlet NSTreeController *treeController;
 @property (strong) NSArray *dragType;
 @property (strong) NSTreeNode *draggedNode;
 
 - (IBAction)newGroup:(id)sender;
 - (IBAction)newLeaf:(id)sender;
+- (IBAction)removeItem:(id)sender;
 
 @end
