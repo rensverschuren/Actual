@@ -11,6 +11,7 @@
 #import "ContentViewController.h"
 #import "PlayerViewController.h"
 #import "ItemsViewController.h"
+#import "SplitView.h"
 
 @implementation DocumentWindowController
 
@@ -36,7 +37,7 @@
     
     //set the subviews of the splitview to minimum size -> displaying them
     [_splitView setPosition:-200.0 ofDividerAtIndex:0];
-    [_splitView setPosition:400 ofDividerAtIndex:1];    
+    [_splitView setPosition:400 ofDividerAtIndex:1];   
     
     _schedulesViewController = [[SchedulesViewController alloc] initWithNibName:@"Schedules" bundle:nil];    
     _contentViewController = [[ContentViewController alloc] initWithNibName:@"Content" bundle:nil];    

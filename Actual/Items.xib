@@ -66,7 +66,7 @@
 										<string key="NSFrameSize">{821, 402}</string>
 										<reference key="NSSuperview" ref="413402872"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView" ref="25106207"/>
+										<reference key="NSNextKeyView" ref="120333804"/>
 										<string key="NSReuseIdentifierKey">_NS:1703</string>
 										<bool key="NSEnabled">YES</bool>
 										<object class="NSTableHeaderView" key="NSHeaderView" id="274888638">
@@ -270,6 +270,7 @@
 								<string key="NSFrame">{{1, 401}, {817, 15}}</string>
 								<reference key="NSSuperview" ref="1044464260"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="389217657"/>
 								<string key="NSReuseIdentifierKey">_NS:1728</string>
 								<int key="NSsFlags">1</int>
 								<reference key="NSTarget" ref="1044464260"/>
@@ -296,7 +297,7 @@
 						<string key="NSFrame">{{-3, -2}, {823, 420}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="413402872"/>
+						<reference key="NSNextKeyView" ref="25106207"/>
 						<string key="NSReuseIdentifierKey">_NS:1699</string>
 						<int key="NSsFlags">133682</int>
 						<reference key="NSVScroller" ref="646795322"/>
@@ -388,7 +389,7 @@
 								<string key="NSFrame">{{648, 17}, {151, 22}}</string>
 								<reference key="NSSuperview" ref="389217657"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="1044464260"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:918</string>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSSearchFieldCell" key="NSCell" id="930138476">
@@ -454,7 +455,7 @@
 				<string key="NSFrameSize">{819, 473}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="389217657"/>
+				<reference key="NSNextKeyView" ref="1044464260"/>
 				<string key="NSClassName">NSView</string>
 			</object>
 			<object class="NSUserDefaultsController" id="259135420">
@@ -465,6 +466,31 @@
 				<bool key="NSAutomaticallyPreparesContent">YES</bool>
 				<object class="_NSManagedProxy" key="_NSManagedProxy">
 					<string key="NSEntityName">Item</string>
+					<object class="NSComparisonPredicate" key="NSFetchPredicate">
+						<object class="NSKeyPathExpression" key="NSLeftExpression">
+							<int key="NSExpressionType">3</int>
+							<string key="NSSelectorName">valueForKey:</string>
+							<object class="NSSelfExpression" key="NSOperand">
+								<int key="NSExpressionType">1</int>
+							</object>
+							<array class="NSMutableArray" key="NSArguments">
+								<object class="NSKeyPathSpecifierExpression">
+									<int key="NSExpressionType">10</int>
+									<string key="NSKeyPath">parent</string>
+								</object>
+							</array>
+						</object>
+						<object class="NSConstantValueExpression" key="NSRightExpression">
+							<int key="NSExpressionType">0</int>
+							<nil key="NSConstantValueClassName"/>
+						</object>
+						<object class="NSEqualityPredicateOperator" key="NSPredicateOperator">
+							<int key="NSOperatorType">4</int>
+							<int key="NSModifier">0</int>
+							<bool key="NSNegate">NO</bool>
+							<int key="NSOptions">0</int>
+						</object>
+					</object>
 				</object>
 				<bool key="_NSIsUsingManagedProxy">YES</bool>
 				<bool key="NSAvoidsEmptySelection">YES</bool>
@@ -1795,6 +1821,7 @@
 				<string key="359.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="362.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="364.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="364.ibExternalFetchPredicateFormat">parent == nil</string>
 				<boolean value="NO" key="371.IBNSViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<string key="371.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="372.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>

@@ -13,6 +13,7 @@
 @class ContentViewController;
 @class PlayerViewController;
 @class ItemsViewController;
+@class SplitView;
 
 @interface DocumentWindowController : NSWindowController
 
@@ -24,7 +25,7 @@
     PlayerViewController *_playerViewController;
     ItemsViewController *_itemsViewController;
     NSSegmentedControl *_inspectorToolbar;    
-    IBOutlet NSSplitView *_splitView;
+    IBOutlet SplitView *_splitView;
     IBOutlet NSTableView *mainTable;    
 }
 

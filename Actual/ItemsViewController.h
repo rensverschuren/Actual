@@ -20,4 +20,6 @@
 - (IBAction)newLeaf:(id)sender;
 - (IBAction)removeItem:(id)sender;
 
+- (void)reIndex;
+
 @end

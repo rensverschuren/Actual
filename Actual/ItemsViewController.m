@@ -51,20 +51,66 @@
 - (BOOL)outlineView:(NSOutlineView *)outlineView acceptDrop:(id<NSDraggingInfo>)info item:(id)item childIndex:(NSInteger)index {
     NSManagedObject *draggedTreeNode = [_draggedNode representedObject];
     [draggedTreeNode setValue:[item representedObject] forKey:@"parent"];
+    //[self reIndex];
+    //to display the expand triangles
+    [_outlineView reloadData];    
+    NSLog(@"%@", [[_treeController arrangedObjects] childNodes]);
     return YES;
 }
 
-- (NSDragOperation)outlineView:(NSOutlineView *)outlineView validateDrop:(id<NSDraggingInfo>)info proposedItem:(id)item proposedChildIndex:(NSInteger)index {    
-    NSManagedObject *object = [item representedObject];
-    NSNumber *isGroup = [object valueForKey:@"isGroup"];
+- (BOOL)category:(NSManagedObject *)cat isSubCategoryOf:(NSManagedObject *)possibleSub {
+    if(cat == possibleSub) {
+        return YES;
+    }
+    NSManagedObject *possSubParent = [possibleSub valueForKey:@"parent"];
+    if(possSubParent == nil) {
+        return NO;
+    }
+    
+    while (possSubParent != nil) {
+        if(possSubParent == cat) {
+            return YES;
+        }
+        possSubParent = [possSubParent valueForKey:@"parent"];
+    }
+    return NO;
+}
+
+- (NSDragOperation)outlineView:(NSOutlineView *)outlineView validateDrop:(id<NSDraggingInfo>)info proposedItem:(id)item proposedChildIndex:(NSInteger)index {
+    
+    NSManagedObject *dragged = [_draggedNode representedObject];
+    NSManagedObject *newP = [item representedObject];
+    NSNumber *isGroup = [newP valueForKey:@"isGroup"];
     BOOL validTarget = [isGroup boolValue];
-    //check if the item is a group, when YES accept the drop.
-    if(validTarget || [item representedObject] == nil) {
+    
+    //check if the possible parent is a group
+    //checking if we are not dragging an item in one of its siblings (endless loop)
+    if(![self category:dragged isSubCategoryOf:newP] && validTarget) {
         return NSDragOperationGeneric;        
     }
-    else {    
-        return NSDragOperationNone;
+    else {   
+        if([item representedObject] == nil) {
+            //dragging operations to the root are allowed
+            return NSDragOperationGeneric;
+        }
+        else {
+            return NSDragOperationNone;
+        }
     }
+}
+
+//- (void)reIndex {
+//    NSUInteger count = [[_treeController arrangedObjects] count];
+    //NSArray *array = [NSArray arrayWithArray:[_treeController ]];
+    
+//    for (int i = 0; i < count; i++) {
+//        id item = [array objectAtIndex:i];
+//        [item setValue:[NSNumber numberWithInt:i] forKey:@"sortIndex"];
+//    }
+//}
+
+- (id)outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:(id)item {
+    return nil;
 }
 
 //required but useless methods-------------------------
@@ -83,7 +129,7 @@
 
 - (IBAction)newGroup:(id)sender {
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Group" inManagedObjectContext:_managedObjectContext];
-    NSManagedObject *item = [[Item alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:_managedObjectContext];    
+    NSManagedObject *item = [[Item alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:_managedObjectContext]; 
 }
 
 - (IBAction)newLeaf:(id)sender {
