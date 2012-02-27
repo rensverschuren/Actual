@@ -7,7 +7,6 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "DocumentWindowController.h"
 
 @interface Document : NSPersistentDocument
 

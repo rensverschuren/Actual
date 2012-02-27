@@ -8,6 +8,15 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class GeneralViewController;
+@class AdvancedViewController;
+
 @interface PreferencesWindowController : NSWindowController
+
+@property (weak) IBOutlet NSView *containerView;
+@property (strong) GeneralViewController *generalViewController;
+@property (strong) AdvancedViewController *advancedViewController;
+
+- (IBAction)changeView:(id)sender;
 
 @end

@@ -36,8 +36,9 @@
     _dragType = [NSArray arrayWithObject:@"factorialDragType"];
     [_outlineView registerForDraggedTypes:_dragType];
     
-    //NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"text" ascending:YES];
-    //[_treeController setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"sortIndex" ascending:YES];
+    [_treeController setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    [_outlineView setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
 }
 
 //- (BOOL)category:(NSManagedObject *)cat 
@@ -53,6 +54,7 @@
     [draggedTreeNode setValue:[item representedObject] forKey:@"parent"];
     //[self reIndex];
     //to display the expand triangles
+    [_treeController rearrangeObjects];
     [_outlineView reloadData];    
     NSLog(@"%@", [[_treeController arrangedObjects] childNodes]);
     return YES;
@@ -90,7 +92,7 @@
     }
     else {   
         if([item representedObject] == nil) {
-            //dragging operations to the root are allowed
+            //dragging operations to the root are always allowed
             return NSDragOperationGeneric;
         }
         else {
@@ -129,7 +131,7 @@
 
 - (IBAction)newGroup:(id)sender {
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Group" inManagedObjectContext:_managedObjectContext];
-    NSManagedObject *item = [[Item alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:_managedObjectContext]; 
+    NSManagedObject *item = [[Item alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:_managedObjectContext];    
 }
 
 - (IBAction)newLeaf:(id)sender {

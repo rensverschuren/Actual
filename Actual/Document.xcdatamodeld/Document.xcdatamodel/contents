@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11D50" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1170" systemVersion="11D50" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Group" representedClassName="Group" parentEntity="Item" syncable="YES"/>
     <entity name="Item" representedClassName="Item" isAbstract="YES" syncable="YES">
         <attribute name="enabled" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
@@ -41,8 +41,8 @@
         <element name="Group" positionX="61" positionY="180" width="128" height="45"/>
         <element name="Item" positionX="-27" positionY="-144" width="128" height="180"/>
         <element name="Leaf" positionX="-126" positionY="180" width="128" height="45"/>
-        <element name="QuartzComposition" positionX="45" positionY="351" width="128" height="45"/>
-        <element name="Schedule" positionX="412" positionY="-216" width="128" height="330"/>
+        <element name="QuartzComposition" positionX="7" positionY="351" width="128" height="45"/>
+        <element name="Schedule" positionX="367" positionY="-330" width="128" height="330"/>
         <element name="Video" positionX="-126" positionY="351" width="128" height="45"/>
     </elements>
 </model>
