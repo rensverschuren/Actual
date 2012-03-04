@@ -36,12 +36,10 @@
     _dragType = [NSArray arrayWithObject:@"factorialDragType"];
     [_outlineView registerForDraggedTypes:_dragType];
     
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"sortIndex" ascending:YES];
-    [_treeController setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
-    [_outlineView setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    //NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"sortIndex" ascending:YES];
+    //[_treeController setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    //[_outlineView setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
 }
-
-//- (BOOL)category:(NSManagedObject *)cat 
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView writeItems:(NSArray *)items toPasteboard:(NSPasteboard *)pasteboard {
     [pasteboard declareTypes:_dragType owner:self];
@@ -52,11 +50,14 @@
 - (BOOL)outlineView:(NSOutlineView *)outlineView acceptDrop:(id<NSDraggingInfo>)info item:(id)item childIndex:(NSInteger)index {
     NSManagedObject *draggedTreeNode = [_draggedNode representedObject];
     [draggedTreeNode setValue:[item representedObject] forKey:@"parent"];
-    //[self reIndex];
-    //to display the expand triangles
-    [_treeController rearrangeObjects];
-    [_outlineView reloadData];    
-    NSLog(@"%@", [[_treeController arrangedObjects] childNodes]);
+    [draggedTreeNode setValue:[NSNumber numberWithInt:1] forKey:@"sortIndex"];
+    
+    //reset the sortIndex of the whole tree
+    [self reIndex];
+    
+    //to display the expand triangles    
+    [_outlineView reloadData];  
+    NSLog(@"%@", [_treeController content]);
     return YES;
 }
 
@@ -98,18 +99,20 @@
         else {
             return NSDragOperationNone;
         }
-    }
+    }    
 }
 
-//- (void)reIndex {
-//    NSUInteger count = [[_treeController arrangedObjects] count];
-    //NSArray *array = [NSArray arrayWithArray:[_treeController ]];
+- (void)reIndex {
+    NSUInteger count = [[_treeController content] count];
+    NSArray *array = [NSArray arrayWithArray:[_treeController content]];
     
-//    for (int i = 0; i < count; i++) {
-//        id item = [array objectAtIndex:i];
-//        [item setValue:[NSNumber numberWithInt:i] forKey:@"sortIndex"];
-//    }
-//}
+    for (int i = 0; i < count; i++) {
+        NSManagedObject *managedObject = [array objectAtIndex:i];
+        if([managedObject valueForKey:@"parent"] == nil) {
+            [managedObject setValue:[NSNumber numberWithInt:i] forKey:@"sortIndex"];
+        }
+    }
+}
 
 - (id)outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:(id)item {
     return nil;
