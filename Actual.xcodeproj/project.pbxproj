@@ -92,6 +92,7 @@
 		AC5463B614E67CD60041E26C /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindowController.m; sourceTree = "<group>"; };
 		AC90043F1503AE0E0013C5B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		AC9004421503AE180013C5B3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		AC9004431503AEF10013C5B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = "en.lproj/Actual-Info.plist"; sourceTree = "<group>"; };
 		ACA7148B14ED035800DFD2EF /* SplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitView.h; sourceTree = "<group>"; };
 		ACA7148C14ED035800DFD2EF /* SplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitView.m; sourceTree = "<group>"; };
 		ACA84D2314DFD6E0005EA159 /* Actual.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Actual.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,7 +100,6 @@
 		ACA84D2A14DFD6E1005EA159 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		ACA84D2B14DFD6E1005EA159 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		ACA84D2C14DFD6E1005EA159 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		ACA84D2F14DFD6E1005EA159 /* Actual-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Actual-Info.plist"; sourceTree = "<group>"; };
 		ACA84D3114DFD6E1005EA159 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ACA84D3314DFD6E1005EA159 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ACA84D3514DFD6E1005EA159 /* Actual-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Actual-Prefix.pch"; sourceTree = "<group>"; };
@@ -254,7 +254,7 @@
 		ACA84D2E14DFD6E1005EA159 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				ACA84D2F14DFD6E1005EA159 /* Actual-Info.plist */,
+				AC9004441503AEF10013C5B3 /* Actual-Info.plist */,
 				ACA84D3014DFD6E1005EA159 /* InfoPlist.strings */,
 				ACA84D3314DFD6E1005EA159 /* main.m */,
 				ACA84D3514DFD6E1005EA159 /* Actual-Prefix.pch */,
@@ -471,6 +471,14 @@
 				AC9004421503AE180013C5B3 /* nl */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		AC9004441503AEF10013C5B3 /* Actual-Info.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC9004431503AEF10013C5B3 /* en */,
+			);
+			name = "Actual-Info.plist";
 			sourceTree = "<group>";
 		};
 		ACA84D3014DFD6E1005EA159 /* InfoPlist.strings */ = {
