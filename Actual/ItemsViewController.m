@@ -27,18 +27,22 @@
     return self;
 }
 
-- (void)outlineViewSelectionDidChange:(NSNotification *)notification {    
-    NSNotification *postedNotification = [NSNotification notificationWithName:@"itemOutlineViewSelectionDidChange" object:_treeController];
-    [[NSNotificationCenter defaultCenter] postNotification:postedNotification];
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if([keyPath isEqualToString:@"selectedObjects"]) {        
+        NSNotification *postedNotification = [NSNotification notificationWithName:@"itemOutlineViewSelectionDidChange" object:_treeController];
+        [[NSNotificationCenter defaultCenter] postNotification:postedNotification];
+    }    
 }
 
 - (void)awakeFromNib {    
     _dragType = [NSArray arrayWithObject:@"factorialDragType"];
     [_outlineView registerForDraggedTypes:_dragType];
     
-    //NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"sortIndex" ascending:YES];
-    //[_treeController setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
-    //[_outlineView setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"sortIndex" ascending:YES];
+    [_treeController setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    [_outlineView setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
+    [_treeController addObserver:self forKeyPath:@"selectedObjects" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView writeItems:(NSArray *)items toPasteboard:(NSPasteboard *)pasteboard {
@@ -47,17 +51,23 @@
     return YES;
 }
 
-- (BOOL)outlineView:(NSOutlineView *)outlineView acceptDrop:(id<NSDraggingInfo>)info item:(id)item childIndex:(NSInteger)index {
-    NSManagedObject *draggedTreeNode = [_draggedNode representedObject];
-    [draggedTreeNode setValue:[item representedObject] forKey:@"parent"];
-    [draggedTreeNode setValue:[NSNumber numberWithInt:1] forKey:@"sortIndex"];
+- (BOOL)outlineView:(NSOutlineView *)outlineView acceptDrop:(id<NSDraggingInfo>)info item:(id)item childIndex:(NSInteger)index {   
+    //when dragged to the root, set empty index path
+    NSIndexPath *proposedParentIndexPath = (item) ? [item indexPath] : [[NSIndexPath alloc] init];      
+    
+    //if the dragged node is not specifically positioned within it's proposed parent, set position to 0
+    index = (index < 0) ? 0 : index;
+    
+    //move the node to the new location (index path)
+    [_treeController moveNode:_draggedNode toIndexPath:[proposedParentIndexPath indexPathByAddingIndex:index]];       
+    
+    //setting the new parent for the dragged node
+    NSManagedObject *draggedObject = [_draggedNode representedObject];
+    [draggedObject setValue:[item representedObject] forKey:@"parent"];
     
     //reset the sortIndex of the whole tree
-    [self reIndex];
+    [self reIndex];    
     
-    //to display the expand triangles    
-    [_outlineView reloadData];  
-    NSLog(@"%@", [_treeController content]);
     return YES;
 }
 
@@ -79,7 +89,7 @@
     return NO;
 }
 
-- (NSDragOperation)outlineView:(NSOutlineView *)outlineView validateDrop:(id<NSDraggingInfo>)info proposedItem:(id)item proposedChildIndex:(NSInteger)index {
+- (NSDragOperation)outlineView:(NSOutlineView *)outlineView validateDrop:(id<NSDraggingInfo>)info proposedItem:(id)item proposedChildIndex:(NSInteger)index {   
     
     NSManagedObject *dragged = [_draggedNode representedObject];
     NSManagedObject *newP = [item representedObject];
@@ -89,10 +99,10 @@
     //check if the possible parent is a group
     //checking if we are not dragging an item in one of its siblings (endless loop)
     if(![self category:dragged isSubCategoryOf:newP] && validTarget) {
-        return NSDragOperationGeneric;        
+        return NSDragOperationGeneric;
     }
     else {   
-        if([item representedObject] == nil) {
+        if([item representedObject] == nil && index != -1) {
             //dragging operations to the root are always allowed
             return NSDragOperationGeneric;
         }
@@ -103,15 +113,7 @@
 }
 
 - (void)reIndex {
-    NSUInteger count = [[_treeController content] count];
-    NSArray *array = [NSArray arrayWithArray:[_treeController content]];
-    
-    for (int i = 0; i < count; i++) {
-        NSManagedObject *managedObject = [array objectAtIndex:i];
-        if([managedObject valueForKey:@"parent"] == nil) {
-            [managedObject setValue:[NSNumber numberWithInt:i] forKey:@"sortIndex"];
-        }
-    }
+    [_outlineView reloadData];
 }
 
 - (id)outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:(id)item {
@@ -135,11 +137,14 @@
 - (IBAction)newGroup:(id)sender {
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Group" inManagedObjectContext:_managedObjectContext];
     NSManagedObject *item = [[Item alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:_managedObjectContext];    
+    [self reIndex];  
+    [_outlineView reloadData]; 
 }
 
 - (IBAction)newLeaf:(id)sender {
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Video" inManagedObjectContext:_managedObjectContext];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"QuartzComposition" inManagedObjectContext:_managedObjectContext];
     NSManagedObject *item = [[Item alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:_managedObjectContext]; 
+    [self reIndex];    
 }
 
 - (IBAction)removeItem:(id)sender {
@@ -147,6 +152,8 @@
     if([_treeController selectionIndexPath]) {
         //remove the selected item from the _treeController
         [_treeController removeObjectAtArrangedObjectIndexPath:[_treeController selectionIndexPath]];
+        
+        [self reIndex];
     }
 }
 

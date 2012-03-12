@@ -17,7 +17,7 @@
 - (NSImage *)image {  
     NSImage *image = [NSImage imageNamed:@"quartz"]; 
     NSImageRep *imageRep = [[image representations] objectAtIndex:0];
-    [imageRep setSize:NSMakeSize(32.0, 32.0)];        
+    [imageRep setSize:NSMakeSize(16.0, 16.0)];        
     return image;
 }
 

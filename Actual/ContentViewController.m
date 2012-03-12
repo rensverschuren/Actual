@@ -26,7 +26,7 @@
     return self;
 }
 
-- (void)awakeFromNib {     
+- (void)awakeFromNib {    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"itemOutlineViewSelectionDidChange" object:nil];
     [self setupPlayer];
 }
@@ -36,7 +36,10 @@
     NSArray *items = [treeController selectedObjects];
     if([items count] > 0) {
         [self setValue:[items objectAtIndex:0] forKey:@"item"];            
-    }    
+    }   
+    else {
+        [self setValue:nil forKey:@"item"];
+    }
     [self setupPlayer];
 }
 

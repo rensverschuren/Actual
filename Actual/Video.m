@@ -10,6 +10,10 @@
 
 @implementation Video
 
+- (void)awakeFromInsert {
+    [self setValue:@"New Video" forKey:@"text"];
+}
+
 - (NSImage *)image {  
     NSImage *image = [NSImage imageNamed:@"video"]; 
     NSImageRep *imageRep = [[image representations] objectAtIndex:0];

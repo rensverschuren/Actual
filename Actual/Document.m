@@ -39,9 +39,9 @@
 
 - (void)makeWindowControllers {
     DocumentWindowController *windowController = [[DocumentWindowController alloc] initWithWindowNibName:@"Document"];       
-    PreviewWindowController *previewWindowController = [[PreviewWindowController alloc] initWithWindowNibName:@"Preview"]; 
+    //PreviewWindowController *previewWindowController = [[PreviewWindowController alloc] initWithWindowNibName:@"Preview"]; 
     [self addWindowController:windowController]; 
-    [self addWindowController:previewWindowController]; 
+    //[self addWindowController:previewWindowController]; 
 }
 
 @end

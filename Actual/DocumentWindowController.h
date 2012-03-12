@@ -30,6 +30,7 @@
 }
 
 @property (strong) NSManagedObjectContext *managedObjectContext;
+@property (weak) IBOutlet NSMenu *addItemMenu;
 
 - (IBAction)changeInspectorView:(id)sender;
 

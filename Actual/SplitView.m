@@ -11,7 +11,7 @@
 @implementation SplitView
 
 - (NSColor *)dividerColor {
-    return [NSColor colorWithSRGBRed:0.40 green:0.40 blue:0.40 alpha:1.0];
+    return [NSColor colorWithSRGBRed:0.82 green:0.82 blue:0.82 alpha:1.0];
 }
 
 @end

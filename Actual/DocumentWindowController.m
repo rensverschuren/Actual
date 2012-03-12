@@ -16,6 +16,7 @@
 @implementation DocumentWindowController
 
 @synthesize managedObjectContext = _managedObjectContext;
+@synthesize addItemMenu = _addItemMenu;
 
 - (id)initWithWindow:(NSWindow *)window
 {

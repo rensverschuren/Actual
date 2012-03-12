@@ -60,8 +60,8 @@
     NSDate *date_from;
     NSDate *date_to;
     
-    //checking if valid_from or valid_to are enabled, when this is the case: return inserted date. 
-    //Else: return a date that's in the distant future or past
+    //checking if valid_from or valid_to are enabled, when this is the case: set inserted date. 
+    //Else: set a date that's in the distant future or past
     date_from = ([self valueForKeyPath:@"valid_from_enabled"]) ? [self valueForKeyPath:@"valid_from"] : [NSDate distantPast];
     date_to = ([self valueForKeyPath:@"valid_to_enabled"]) ? [self valueForKeyPath:@"valid_to"] : [NSDate distantFuture];    
     

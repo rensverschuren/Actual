@@ -34,12 +34,19 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"itemOutlineViewSelectionDidChange" object:nil];
 }
 
+- (IBAction)setRule:(id)sender {
+    NSLog(@"%@", [sender tag]);
+}
+
 - (void)updateView:(NSNotification *)notification {     
     NSTreeController *treeController = [notification object];
     NSArray *items = [treeController selectedObjects];
     if([items count] > 0) {
         [self setValue:[items objectAtIndex:0] forKey:@"item"];        
-    }    
+    }   
+    else {
+        [self setValue:nil forKey:@"item"];
+    }
 }
 
 @end

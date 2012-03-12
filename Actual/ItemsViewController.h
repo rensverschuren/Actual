@@ -13,6 +13,7 @@
 @property (strong) NSManagedObjectContext *managedObjectContext;
 @property (weak) IBOutlet NSOutlineView *outlineView;
 @property (weak) IBOutlet NSTreeController *treeController;
+
 @property (strong) NSArray *dragType;
 @property (strong) NSTreeNode *draggedNode;
 
@@ -21,5 +22,6 @@
 - (IBAction)removeItem:(id)sender;
 
 - (void)reIndex;
+
 
 @end

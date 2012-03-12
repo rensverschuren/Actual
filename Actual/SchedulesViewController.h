@@ -17,5 +17,6 @@
 @property (strong) NSManagedObjectContext *managedObjectContext;
 
 - (void)updateView:(NSNotification *)notification;
+- (IBAction)setRule:(id)sender;
 
 @end

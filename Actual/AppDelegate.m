@@ -39,11 +39,11 @@
 #pragma mark Delegate methods
 
 - (void)netService:(NSNetService *)sender didNotPublish:(NSDictionary *)errorDict {
-    NSLog(@"Didn't publish the service");
+    NSLog(@"The network service could not be published.");
 }
 
 - (void)netServiceDidPublish:(NSNetService *)sender {
-    NSLog(@"Service published");
+    NSLog(@"Service published on the network.");
 }
 
 @end
