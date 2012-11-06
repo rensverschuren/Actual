@@ -23,11 +23,13 @@
 		AC3D1B4014ED202D008A3432 /* tb_publish.tiff in Resources */ = {isa = PBXBuildFile; fileRef = AC3D1B3F14ED202D008A3432 /* tb_publish.tiff */; };
 		AC3F90F214FC3EE400E37A66 /* GeneralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3F90F114FC3EE400E37A66 /* GeneralViewController.m */; };
 		AC3F90F514FC465D00E37A66 /* AdvancedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3F90F414FC465D00E37A66 /* AdvancedViewController.m */; };
-		AC3F90F714FC468300E37A66 /* Advanced.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC3F90F614FC468200E37A66 /* Advanced.xib */; };
 		AC43453014FF8D49004821FE /* General.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC43453214FF8D49004821FE /* General.xib */; };
 		AC50946D150E5A3100A6E95F /* quartz.icns in Resources */ = {isa = PBXBuildFile; fileRef = AC50946C150E5A3100A6E95F /* quartz.icns */; };
 		AC5463B314E676B50041E26C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5463B214E676B50041E26C /* AppDelegate.m */; };
 		AC5463B714E67CD60041E26C /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5463B614E67CD60041E26C /* PreferencesWindowController.m */; };
+		AC6C5267150F943C00A8B139 /* Advanced.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC6C5269150F943C00A8B139 /* Advanced.xib */; };
+		AC6C526C150F94CB00A8B139 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC6C526E150F94CB00A8B139 /* Preferences.xib */; };
+		AC6C5270150F958A00A8B139 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC6C5272150F958A00A8B139 /* Document.xib */; };
 		AC90043E1503AE0E0013C5B3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9004401503AE0E0013C5B3 /* MainMenu.xib */; };
 		ACA7148D14ED035800DFD2EF /* SplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA7148C14ED035800DFD2EF /* SplitView.m */; };
 		ACA84D2814DFD6E1005EA159 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA84D2714DFD6E1005EA159 /* Cocoa.framework */; };
@@ -44,14 +46,12 @@
 		ACA84D6914DFD771005EA159 /* Player.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACA84D5514DFD771005EA159 /* Player.xib */; };
 		ACA84D6A14DFD771005EA159 /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA84D5714DFD771005EA159 /* PlayerView.m */; };
 		ACA84D6B14DFD771005EA159 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA84D5914DFD771005EA159 /* PlayerViewController.m */; };
-		ACA84D6C14DFD771005EA159 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACA84D5A14DFD771005EA159 /* Preferences.xib */; };
 		ACA84D6E14DFD771005EA159 /* Schedules.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACA84D5D14DFD771005EA159 /* Schedules.xib */; };
 		ACA84D6F14DFD771005EA159 /* SchedulesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA84D5F14DFD771005EA159 /* SchedulesViewController.m */; };
 		ACA84D7014DFD771005EA159 /* SplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA84D6114DFD771005EA159 /* SplitViewController.m */; };
 		ACA84D7614DFD7CA005EA159 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA84D7514DFD7CA005EA159 /* QuartzCore.framework */; };
 		ACA84D7814DFD7D3005EA159 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA84D7714DFD7D3005EA159 /* AVFoundation.framework */; };
 		ACA84D7A14DFD7DD005EA159 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA84D7914DFD7DD005EA159 /* CoreMedia.framework */; };
-		ACF45BFF1504B197005897A6 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACF45C001504B197005897A6 /* Document.xib */; };
 		ACF45C021504B65B005897A6 /* Add Item Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACF45C011504B65B005897A6 /* Add Item Menu.xib */; };
 /* End PBXBuildFile section */
 
@@ -81,7 +81,6 @@
 		AC3F90F114FC3EE400E37A66 /* GeneralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralViewController.m; sourceTree = "<group>"; };
 		AC3F90F314FC465D00E37A66 /* AdvancedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvancedViewController.h; sourceTree = "<group>"; };
 		AC3F90F414FC465D00E37A66 /* AdvancedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvancedViewController.m; sourceTree = "<group>"; };
-		AC3F90F614FC468200E37A66 /* Advanced.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Advanced.xib; sourceTree = "<group>"; };
 		AC43453114FF8D49004821FE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/General.xib; sourceTree = "<group>"; };
 		AC43453414FF9AC1004821FE /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/General.xib; sourceTree = "<group>"; };
 		AC50946C150E5A3100A6E95F /* quartz.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = quartz.icns; sourceTree = "<group>"; };
@@ -89,6 +88,12 @@
 		AC5463B214E676B50041E26C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AC5463B514E67CD60041E26C /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindowController.h; sourceTree = "<group>"; };
 		AC5463B614E67CD60041E26C /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindowController.m; sourceTree = "<group>"; };
+		AC6C5268150F943C00A8B139 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Advanced.xib; sourceTree = "<group>"; };
+		AC6C526B150F944100A8B139 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/Advanced.xib; sourceTree = "<group>"; };
+		AC6C526D150F94CB00A8B139 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Preferences.xib; sourceTree = "<group>"; };
+		AC6C526F150F94D000A8B139 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/Preferences.xib; sourceTree = "<group>"; };
+		AC6C5271150F958A00A8B139 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Document.xib; sourceTree = "<group>"; };
+		AC6C5273150F959100A8B139 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/Document.xib; sourceTree = "<group>"; };
 		AC90043F1503AE0E0013C5B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		AC9004421503AE180013C5B3 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		ACA7148B14ED035800DFD2EF /* SplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitView.h; sourceTree = "<group>"; };
@@ -118,7 +123,6 @@
 		ACA84D5714DFD771005EA159 /* PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerView.m; sourceTree = "<group>"; };
 		ACA84D5814DFD771005EA159 /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
 		ACA84D5914DFD771005EA159 /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
-		ACA84D5A14DFD771005EA159 /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		ACA84D5D14DFD771005EA159 /* Schedules.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Schedules.xib; sourceTree = "<group>"; };
 		ACA84D5E14DFD771005EA159 /* SchedulesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchedulesViewController.h; sourceTree = "<group>"; };
 		ACA84D5F14DFD771005EA159 /* SchedulesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchedulesViewController.m; sourceTree = "<group>"; };
@@ -128,7 +132,6 @@
 		ACA84D7714DFD7D3005EA159 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = ../../../../System/Library/Frameworks/AVFoundation.framework; sourceTree = "<group>"; };
 		ACA84D7914DFD7DD005EA159 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = ../../../../System/Library/Frameworks/CoreMedia.framework; sourceTree = "<group>"; };
 		ACF45BF91504AF06005897A6 /* Actual-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Actual-Info.plist"; sourceTree = "<group>"; };
-		ACF45C001504B197005897A6 /* Document.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Document.xib; sourceTree = "<group>"; };
 		ACF45C011504B65B005897A6 /* Add Item Menu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Add Item Menu.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,7 +170,7 @@
 				AC3F90E914FC3E2C00E37A66 /* Preferences */,
 				AC9004401503AE0E0013C5B3 /* MainMenu.xib */,
 				ACA84D4A14DFD771005EA159 /* Content.xib */,
-				ACF45C001504B197005897A6 /* Document.xib */,
+				AC6C5272150F958A00A8B139 /* Document.xib */,
 				ACA84D5214DFD771005EA159 /* Items.xib */,
 				ACA84D5514DFD771005EA159 /* Player.xib */,
 				ACA84D5D14DFD771005EA159 /* Schedules.xib */,
@@ -180,9 +183,9 @@
 		AC3F90E914FC3E2C00E37A66 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				ACA84D5A14DFD771005EA159 /* Preferences.xib */,
+				AC6C526E150F94CB00A8B139 /* Preferences.xib */,
 				AC43453214FF8D49004821FE /* General.xib */,
-				AC3F90F614FC468200E37A66 /* Advanced.xib */,
+				AC6C5269150F943C00A8B139 /* Advanced.xib */,
 			);
 			name = Preferences;
 			sourceTree = "<group>";
@@ -196,6 +199,17 @@
 				AC3F90F414FC465D00E37A66 /* AdvancedViewController.m */,
 			);
 			name = Preferences;
+			sourceTree = "<group>";
+		};
+		AC5AB5AF150E62BC0058CD40 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				ACA84D6014DFD771005EA159 /* SplitViewController.h */,
+				ACA84D6114DFD771005EA159 /* SplitViewController.m */,
+				AC5463B114E676B50041E26C /* AppDelegate.h */,
+				AC5463B214E676B50041E26C /* AppDelegate.m */,
+			);
+			name = Delegates;
 			sourceTree = "<group>";
 		};
 		ACA84D1814DFD6E0005EA159 = {
@@ -240,8 +254,7 @@
 		ACA84D2D14DFD6E1005EA159 /* Actual */ = {
 			isa = PBXGroup;
 			children = (
-				AC5463B114E676B50041E26C /* AppDelegate.h */,
-				AC5463B214E676B50041E26C /* AppDelegate.m */,
+				AC5AB5AF150E62BC0058CD40 /* Delegates */,
 				ACA84D7F14DFD967005EA159 /* Models */,
 				ACA84D8014DFD977005EA159 /* Views */,
 				ACA84D8114DFD986005EA159 /* Controllers */,
@@ -339,8 +352,6 @@
 				ACA84D5914DFD771005EA159 /* PlayerViewController.m */,
 				ACA84D5E14DFD771005EA159 /* SchedulesViewController.h */,
 				ACA84D5F14DFD771005EA159 /* SchedulesViewController.m */,
-				ACA84D6014DFD771005EA159 /* SplitViewController.h */,
-				ACA84D6114DFD771005EA159 /* SplitViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -371,7 +382,7 @@
 		ACA84D1A14DFD6E0005EA159 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = ACA84D1D14DFD6E0005EA159 /* Build configuration list for PBXProject "Actual" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -400,10 +411,10 @@
 				ACA84D3214DFD6E1005EA159 /* InfoPlist.strings in Resources */,
 				ACA84D3814DFD6E1005EA159 /* Credits.rtf in Resources */,
 				ACA84D6214DFD771005EA159 /* Content.xib in Resources */,
-				ACF45BFF1504B197005897A6 /* Document.xib in Resources */,
+				AC6C5270150F958A00A8B139 /* Document.xib in Resources */,
 				ACA84D6714DFD771005EA159 /* Items.xib in Resources */,
 				ACA84D6914DFD771005EA159 /* Player.xib in Resources */,
-				ACA84D6C14DFD771005EA159 /* Preferences.xib in Resources */,
+				AC6C526C150F94CB00A8B139 /* Preferences.xib in Resources */,
 				ACA84D6E14DFD771005EA159 /* Schedules.xib in Resources */,
 				AC90043E1503AE0E0013C5B3 /* MainMenu.xib in Resources */,
 				AC3B972D14E96561005246A8 /* folder.icns in Resources */,
@@ -414,7 +425,7 @@
 				AC3D1B4014ED202D008A3432 /* tb_publish.tiff in Resources */,
 				AC00E31914F6A0CF00A110F9 /* Preview.xib in Resources */,
 				AC43453014FF8D49004821FE /* General.xib in Resources */,
-				AC3F90F714FC468300E37A66 /* Advanced.xib in Resources */,
+				AC6C5267150F943C00A8B139 /* Advanced.xib in Resources */,
 				ACF45C021504B65B005897A6 /* Add Item Menu.xib in Resources */,
 				AC50946D150E5A3100A6E95F /* quartz.icns in Resources */,
 			);
@@ -462,6 +473,33 @@
 				AC43453414FF9AC1004821FE /* nl */,
 			);
 			name = General.xib;
+			sourceTree = "<group>";
+		};
+		AC6C5269150F943C00A8B139 /* Advanced.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC6C5268150F943C00A8B139 /* en */,
+				AC6C526B150F944100A8B139 /* nl */,
+			);
+			name = Advanced.xib;
+			sourceTree = "<group>";
+		};
+		AC6C526E150F94CB00A8B139 /* Preferences.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC6C526D150F94CB00A8B139 /* en */,
+				AC6C526F150F94D000A8B139 /* nl */,
+			);
+			name = Preferences.xib;
+			sourceTree = "<group>";
+		};
+		AC6C5272150F958A00A8B139 /* Document.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC6C5271150F958A00A8B139 /* en */,
+				AC6C5273150F959100A8B139 /* nl */,
+			);
+			name = Document.xib;
 			sourceTree = "<group>";
 		};
 		AC9004401503AE0E0013C5B3 /* MainMenu.xib */ = {
@@ -542,6 +580,7 @@
 		ACA84D4814DFD6E1005EA159 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -557,6 +596,7 @@
 		ACA84D4914DFD6E1005EA159 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",

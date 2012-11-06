@@ -10,13 +10,10 @@
 
 @class PreferencesWindowController;
 
-@interface AppDelegate : NSObject <NSApplicationDelegate, NSNetServiceDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate>
 
-@property (strong) NSNetService *netService;
 @property (strong) PreferencesWindowController *preferencesWindowController;
 
 - (IBAction)openPreferencesWindow:(id)sender;
-- (void)startService;
-- (void)stopService;
 
 @end

@@ -22,6 +22,7 @@
 - (IBAction)removeItem:(id)sender;
 
 - (void)reIndex;
+- (void)postNotification;
 
 
 @end

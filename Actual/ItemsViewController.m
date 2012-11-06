@@ -30,8 +30,13 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if([keyPath isEqualToString:@"selectedObjects"]) {        
         NSNotification *postedNotification = [NSNotification notificationWithName:@"itemOutlineViewSelectionDidChange" object:_treeController];
-        [[NSNotificationCenter defaultCenter] postNotification:postedNotification];
+        [[NSNotificationCenter defaultCenter] postNotification:postedNotification];        
     }    
+}
+
+- (void)postNotification {
+    NSNotification *postedNotification = [NSNotification notificationWithName:@"viewDidAwakeFromNib" object:_treeController];
+    [[NSNotificationCenter defaultCenter] postNotification:postedNotification];
 }
 
 - (void)awakeFromNib {    
@@ -43,6 +48,7 @@
     [_outlineView setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
     
     [_treeController addObserver:self forKeyPath:@"selectedObjects" options:NSKeyValueObservingOptionNew context:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(postNotification) name:@"viewDidAwakeFromNib" object:nil];
 }
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView writeItems:(NSArray *)items toPasteboard:(NSPasteboard *)pasteboard {
@@ -67,6 +73,8 @@
     
     //reset the sortIndex of the whole tree
     [self reIndex];    
+    
+    NSLog(@"%@", [_treeController content]);
     
     return YES;
 }
@@ -137,14 +145,13 @@
 - (IBAction)newGroup:(id)sender {
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Group" inManagedObjectContext:_managedObjectContext];
     NSManagedObject *item = [[Item alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:_managedObjectContext];    
-    [self reIndex];  
-    [_outlineView reloadData]; 
+    
 }
 
 - (IBAction)newLeaf:(id)sender {
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"QuartzComposition" inManagedObjectContext:_managedObjectContext];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Video" inManagedObjectContext:_managedObjectContext];
     NSManagedObject *item = [[Item alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:_managedObjectContext]; 
-    [self reIndex];    
+    
 }
 
 - (IBAction)removeItem:(id)sender {

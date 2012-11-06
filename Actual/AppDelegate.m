@@ -11,11 +11,10 @@
 
 @implementation AppDelegate
 
-@synthesize netService = _netService;
 @synthesize preferencesWindowController = _preferencesWindowController;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
-    [self startService];
+    
 }
 
 - (IBAction)openPreferencesWindow:(id)sender {
@@ -26,24 +25,8 @@
     [_preferencesWindowController showWindow:nil];    
 }
 
-- (void)startService {
-    _netService = [[NSNetService alloc] initWithDomain:@"" type:@"_actualplayout._tcp." name:@"" port:5678];
-    _netService.delegate = self;
-    [_netService publish];
-}
-
-- (void)stopService {
-    [_netService stop];
-}
-
-#pragma mark Delegate methods
-
-- (void)netService:(NSNetService *)sender didNotPublish:(NSDictionary *)errorDict {
-    NSLog(@"The network service could not be published.");
-}
-
-- (void)netServiceDidPublish:(NSNetService *)sender {
-    NSLog(@"Service published on the network.");
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
+    return YES;
 }
 
 @end

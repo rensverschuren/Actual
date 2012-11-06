@@ -32,6 +32,10 @@
     [imageView setImage:[NSImage imageNamed:NSImageNameStatusAvailable]];
     [_status addSubview:imageView];    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateView:) name:@"itemOutlineViewSelectionDidChange" object:nil];
+    
+    //post notification to notify other objects the view is initialized -> get NSManagedObject
+    NSNotification *postedNotification = [NSNotification notificationWithName:@"viewDidAwakeFromNib" object:self];
+    [[NSNotificationCenter defaultCenter] postNotification:postedNotification];
 }
 
 - (IBAction)setRule:(id)sender {

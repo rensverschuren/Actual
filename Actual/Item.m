@@ -10,6 +10,8 @@
 
 @implementation Item
 
+@synthesize image;
+
 - (NSString *)urlShort {
     NSURL *url = [NSURL URLWithString:[self valueForKeyPath:@"filePath"]];
     return [url path];
